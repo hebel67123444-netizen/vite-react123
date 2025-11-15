@@ -1,13 +1,100 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>刷题APP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部导航 -->
+        <header class="header">
+            <div class="header-left">
+                <span class="title">加油站操作员初级</span>
+            </div>
+            <div class="header-right">
+                <button class="btn btn-icon" id="menuBtn">
+                    <span class="icon">☰</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <!-- 题目显示区域 -->
+            <div class="question-section">
+                <div class="question-header">
+                    <span class="question-type" id="questionType">单选题</span>
+                    <span class="question-number" id="questionNumber">1/405</span>
+                </div>
+                <div class="question-content" id="questionContent">
+                    <!-- 题目内容将通过JavaScript动态加载 -->
+                </div>
+
+                <!-- 选项区域 -->
+                <div class="options" id="options">
+                    <!-- 选项将通过JavaScript动态加载 -->
+                </div>
+
+                <!-- 结果解析区域 -->
+                <div class="result-section" id="resultSection">
+                    <div class="result-icon" id="resultIcon"></div>
+                    <div class="result-text" id="resultText"></div>
+                    <div class="analysis" id="analysis">
+                        <h4>解析：</h4>
+                        <p id="analysisContent"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 导航按钮 -->
+            <div class="nav-buttons">
+                <button class="btn btn-secondary" id="prevBtn">上一题</button>
+                <button class="btn btn-primary" id="nextBtn">下一题</button>
+                <button class="btn btn-icon" id="favoriteBtn">
+                    <span class="icon" id="favoriteIcon">☆</span>
+                </button>
+            </div>
+        </main>
+
+        <!-- 侧边菜单 -->
+        <div class="menu" id="menu">
+            <div class="menu-header">
+                <h3>菜单</h3>
+                <button class="btn btn-icon" id="closeMenuBtn">×</button>
+            </div>
+            <div class="menu-content">
+                <button class="menu-item active" id="allQuestionsBtn">
+                    <span class="menu-icon">📚</span>
+                    <span>全部题目</span>
+                </button>
+                <button class="menu-item" id="judgeQuestionsBtn">
+                    <span class="menu-icon">✓</span>
+                    <span>判断题</span>
+                    <span class="badge" id="judgeCount">0</span>
+                </button>
+                <button class="menu-item" id="favoriteQuestionsBtn">
+                    <span class="menu-icon">⭐</span>
+                    <span>收藏题目</span>
+                    <span class="badge" id="favoriteCount">0</span>
+                </button>
+                <button class="menu-item" id="saveBtn">
+                    <span class="menu-icon">💾</span>
+                    <span>保存答题记录</span>
+                </button>
+                <button class="menu-item" id="clearBtn">
+                    <span class="menu-icon">🗑️</span>
+                    <span>清除记录</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 遮罩层 -->
+        <div class="overlay" id="overlay"></div>
+    </div>
+
+    <!-- 引入JavaScript文件 -->
+    <script src="script.js"></script>
+</body>
 </html>
